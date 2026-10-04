@@ -1,0 +1,547 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f4f7fb;
+    color: #172033;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+section h2 {
+    font-weight: 700;
+}
+
+
+/* Navigation */
+nav {
+    background-color: #172033;
+    color: white;
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+nav h2 {
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: #6db7ff;
+}
+
+
+/* Home section */
+.hero {
+    min-height: 650px;
+    position: relative;
+    overflow: hidden;
+    background-color: #172033;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 80px 10%;
+}
+
+.hero-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    opacity: 1;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.45),
+        rgba(0, 0, 0, 0.15)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 72px;
+    margin: 10px 0;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    max-width: 600px;
+    font-size: 19px;
+}
+
+.hero button {
+    margin-top: 25px;
+    padding: 14px 28px;
+    font-size: 17px;
+}
+
+.hero button:hover {
+    background-color: white;
+    color: #2878c8;
+}
+
+
+/* Section titles */
+.small-title {
+    color: #2878c8;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.hero .small-title {
+    color: #b9dcff;
+}
+
+
+/* Buttons */
+button {
+    background-color: #2878c8;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #1c5d9c;
+    transform: translateY(-2px);
+}
+
+
+/* Main sections */
+section {
+    padding: 90px 10%;
+    background-color: #f4f7fb;
+}
+
+#players {
+    background-color: white;
+}
+
+#quiz {
+    background-color: #f4f7fb;
+}
+
+#stats {
+    background-color: white;
+}
+
+section h2 {
+    font-size: 38px;
+    margin: 8px 0 10px;
+}
+
+
+/* Player cards */
+.player-container {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.player-card {
+    background-color: #f4f7fb;
+    border-radius: 16px;
+    overflow: hidden;
+    flex: 1;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.player-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.13);
+}
+
+.player-card > img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.player-content {
+    padding: 25px;
+}
+
+.player-card h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+
+/* Player information */
+.player-info {
+    background-color: #f4f7fb;
+    padding: 25px;
+    margin-top: 25px;
+    border-radius: 12px;
+    max-width: 800px;
+    min-height: 80px;
+}
+
+.player-info h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+
+/* Quiz and stats */
+.quiz-box,
+.stats-box {
+    background-color: white;
+    padding: 30px;
+    margin-top: 25px;
+    border-radius: 12px;
+    max-width: 650px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.quiz-box button {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+#quiz-result,
+#stats-result {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#score {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#next-button,
+#restart-button {
+    display: none;
+}
+
+
+/* Stats inputs */
+input {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    margin: 8px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+
+/* Games page */
+.games-page {
+    min-height: 700px;
+    background-color: #f4f7fb;
+}
+
+.games-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.games-heading > div {
+    flex: 1;
+}
+
+.games-page h1,
+.standings-page h1 {
+    font-size: 48px;
+    margin: 8px 0 10px;
+}
+
+.game-date {
+    margin-top: 45px;
+}
+
+.game-date h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.game-container {
+    display: flex;
+    gap: 25px;
+}
+
+.game-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 16px;
+    flex: 1;
+    min-height: 230px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.25s;
+    text-align: center;
+}
+
+.game-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.team img,
+.game-team img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.team h3 {
+    font-size: 21px;
+}
+
+.vs {
+    font-weight: 700;
+    color: #2878c8;
+    margin: 12px 0;
+}
+
+.game-details {
+    border-top: 1px solid #e5e5e5;
+    margin-top: 18px;
+    padding-top: 15px;
+}
+
+.team-text h3 {
+    font-size: 22px;
+    padding: 18px;
+}
+
+
+/* Standings page */
+.standings-page {
+    min-height: 700px;
+    background-color: #f4f7fb;
+}
+
+.conference {
+    margin-top: 45px;
+}
+
+.conference h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    background-color: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+th {
+    background-color: #172033;
+    color: white;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background-color: #f4f7fb;
+}
+
+.team-name {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.team-name img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+
+/* Footer */
+footer {
+    background-color: #172033;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+footer img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+
+/* Phone layout */
+@media (max-width: 700px) {
+
+    nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0 6px;
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: 600px;
+        padding: 70px 7%;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .player-container {
+        flex-direction: column;
+    }
+
+    .player-card > img {
+        height: 300px;
+    }
+
+    section {
+        padding: 60px 7%;
+    }
+
+    .games-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .games-heading img {
+        width: 100%;
+        height: 220px;
+    }
+
+    .games-page h1,
+    .standings-page h1 {
+        font-size: 38px;
+    }
+
+    .game-container {
+        flex-direction: column;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 500px;
+    }
+}
+
+.standings-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    padding: 80px 10%;
+    background-color: white;
+}
+
+.standings-heading > div {
+    flex: 1;
+}
+
+.standings-heading img {
+    width: 420px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
